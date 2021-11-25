@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+
+
+
+<body>
+event:브라우저에서 방문객이 취하는 모든 동작을 이벤트<br>
+event handler:이벤트가 발생 했을 때 js실행문을 실행하는 것<br>
+
+
+"배경색 바꾸기" 버튼을 클릭할때마다 배경색이 바뀌게 하기<br>
+<script>
+var color=["white","yellow","aqua","purple"];
+var i=0;
+function colorBg(){
+	i++;
+	if(i>=color.length){
+	i=0;}//만약 i값이 배열보다 크면 색깔을 다시 초기와해서 인덱스0부터 다시 시작할 수 있게함
+	document.getElementsByTagName("body")[0].style.backgroundColor=color[i];
+	
+	//var bodyTag=document.getElementsByTagName("body")[0];
+	//bodyTag.style.backgroundColor=color[i]
+
+}
+
+window.onload=function(){
+	///btn2            온로드: 실행될 준비가 되어있는 것?
+	document.getElementById("btn2").onclick=function(){
+		colorBg();
+	}//버튼2가 클릭될때
+	
+	document.getElementById("btn4").onmouseover=function(){
+		colorBg();
+	}//버튼4가 마우스위로 올라왔을 때
+}
+
+
+</script>
+<button onclick="colorBg();">버튼1</button>
+<button id="btn2">버튼2</button>
+<button onmouseover="colorBg();">버튼3</button>
+<button id="btn4">버튼4</button>
+
+
+
+
+</body>
+</html>

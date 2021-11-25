@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+"배경색 바꾸기" 버튼을 클릭할때마다 배경색이 바뀌게 하기<br>
+<script>
+var color=["white","yellow","aqua","purple"];
+var i=0;
+function colorBg(){
+	i++;
+	if(i>=color.length){
+	i=0;}//만약 i값이 배열보다 크면 색깔을 다시 초기와해서 인덱스0부터 다시 시작할 수 있게함
+	document.getElementsByTagName("body")[0].style.backgroundColor=color[i];
+	
+	//var bodyTag=document.getElementsByTagName("body")[0];
+	//bodyTag.style.backgroundColor=color[i]
+	
+	
+}
+</script>
+
+
+<button onclick="colorBg();">배경색 바꾸기</button>
+
+
+</body>
+</html>

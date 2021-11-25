@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Enter your name: <input type="text" id="fname" onblur="myFunction()">
+
+<p>onblur:지정한 요소에 포거스가 다른 요소로 이동 되었을떄 발생하는 이벤트</p>
+<script>
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script>
+
+</body>
+</html>

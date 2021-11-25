@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the addEventListener() method to attach a "dblclick" event to a p element.</p>
+
+<p id="demo">Double-click me.</p>
+
+<script>
+document.getElementById("demo").addEventListener("dblclick", myFunction);//addeventlistener(a,b):동시에 두가지 a,b동작을 적용
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "I was double-clicked!";
+}
+</script>
+
+</body>
+</html>

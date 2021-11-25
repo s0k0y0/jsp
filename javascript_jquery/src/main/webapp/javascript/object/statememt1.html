@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for문을 사용한 4행 3열 테이블 만들기(숫자데이터 포함)</title>
+<style>
+
+td {
+border: 1px solid gray; 	
+text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- i=i+1; i +=1; -->
+
+	<script>
+	var num=1;
+	var t="<table>" /*테이블을 생성하여 변수에 넣어줌*/
+	for(var i=1; i<=4; i++){
+		 t +="<tr>";/*t= <table><tr> */
+		for(var k=1; k<=3; k++){
+			t=t+"<td>"+num+"</td>";/*t= <table><tr><td>num</td> */
+			num++;
+		}
+		t +="</tr>";/*t= <table><tr><td>num</td></tr> */
+	}
+	t += "</table>";/*t= <table><tr><td>num</td></tr></table> */
+	document.write(t);/*반드시 document로 출력을 설정해주어야 함 */
+	
+	
+	var t="<table border=1>";
+	var day=1;
+	
+	for(var i=1; i<=5; i++){
+		t=t+"<tr>";
+		for(var k=1; k<=7; i++){
+			t=t+"<td>";
+			for(var j=1; j<t.length; j++){
+				t=t+day;
+				day++
+			}
+			t=t+"</td>";
+		}
+		t=t+"</tr>";
+	}
+	
+	t=t+"</table>";
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+number 객체:표현 방법<br>
+
+<p id="demo"></p>
+<script>
+var y= new Number(123);
+var y2=123;
+
+var num1=3.456789;
+var num2=700000;
+var num3="30.5px";
+var num4=40;
+
+document.write('표현가능한 가장 큰 수: '+Number.MAX_VALUE,"<br>");//자리수를 e로 표시
+document.write('숫자가 아닌 경우 표기: '+Number.NaN,"<br>");//숫자 아닌 경우 NaN출력
+document.write('무한대수 표기: '+Number.POSITIVE_INFINITY,"<br>");
+document.write(num1.toFixed(2)+"<br>");//자리 수 표시
+document.write(num1.toPrecision(2)+"<br>");//해당 자리에서 반올림
+document.write(num1.toString()+"<br>");
+document.write(num1.valueof()+"<br>");
+document.write(parseInt(num3)+"<br>");
+document.write(parseFloat(num3)+"<br>");//
+
+
+
+
+let x = 123;
+document.getElementById("demo").innerHTML =
+  x.toString() + "<br>" +
+   (123).toString() + "<br>" +
+   (100 + 23).toString();
+
+</script>
+
+
+</body>
+</html>

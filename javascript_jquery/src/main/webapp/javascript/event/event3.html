@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--  -->
+<script>
+function chColor(obj,state) {
+	var myColor;
+	
+	if(state == "over"){
+		myColor="red";
+	}else{
+		myColor="black";
+	}
+	obj.style.color=myColor;
+}
+
+
+</script>
+<button onmouseover="chColor(this,'over')" onmouseout="chColor(this,'black')">
+마우스오버/아웃
+</button><br>
+함수의 파라미터가 존재하면 반드시 호출할때도 타입이 맞는 파라미터를 넣어줘야 함<br>
+
+</body>
+</html>

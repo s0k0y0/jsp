@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+id,pw를 입력 받아서 비교한 후 (abcd/1234),
+일치하면 "id님 방문을 환영합니다.",
+일치하지 않으면 잘못된 비밀번호 또는 존재하지 않는 id입니다<br>
+
+
+user_id;
+user_pw;
+
+login( , );  -->
+
+<script>
+
+var meid=prompt("id를 입력하세요","");
+var mepass=prompt("pass를 입력하세요","");
+
+login(meid,mepass);
+
+function login(id,pass){
+	if(id=="abcd"){
+		if(pass=="1234"){
+			alert(id+"님 방문을 환영합니다");
+		}
+	} else{
+		alert("잘못된 비밀번호 또는 존재하지 않는 id입니다");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*var meid=prompt("id를 입력하세요","");
+var mepass=prompt("pass를 입력하세요","");
+
+var id="abcd";
+var pass="1234";
+
+if(meid==id){
+	if(mepass==pass){
+		alert(id+"님 방문을 환영합니다");
+	}
+} else{
+	alert("잘못된 비밀번호 또는 존재하지 않는 id입니다");
+}
+*/
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019년 달력</title>
+</head>
+
+
+<body>
+<script>
+function get_Time() {
+	var d=new Date();
+	var hour=d.getHours();
+	var minute=d.getMinutes();
+	var ampm;
+	
+	if(hour>=12){
+		ampm="오후";
+	} else{
+		ampm="오전"
+	}
+	
+	return document.write(ampm+hour+":"+minute);
+}//불러오는 모든 메소드에는 반드시 메소드명()을 붙여줘야 한다
+//this는 메소드에 파라미터인 변수를 가리킬때, 메소드의 지역변수는 this.를 써줄 필요가 없음
+
+get_Time();
+
+
+function get_Day(year,month) {
+	var last_Mon=new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+	var Mon2;
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+function drawCal(firstDay,lastDate,date,year,monthName){
+	var t="<table border=1>";
+	var day=1;
+	
+	for(var i=1; i<=5; i++){
+		t=t+"<tr>";
+		for(var k=1; k<=7; i++){
+			t=t+"<td>";
+			for(var j=1; j<t.length; j++){
+				t=t+day;
+				day++
+			}
+			t=t+"</td>";
+		}
+		t=t+"</tr>";
+	}
+	
+	t=t+"</table>";
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

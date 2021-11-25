@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+문자 객체 생성<br>
+<script>
+var t=new String("Hello World");
+</script>
+
+<script>
+var str="Hello Thank you good luck to you";//문자 객체 생성
+
+document.write(str.charAt(10)+"<br>");
+document.write(str.indexOf("you")+"<br>");
+document.write(str.indexOf("you",16)+"<br>");//25인덱스부터 시작해 해당 글자가 있냐?
+document.write(str.lastIndexOf("you",25)+"<br>");
+document.write(str.match("luck")+"<br>");//해당 값이 있냐? 있으면 그대로 출력 없으면 null출력
+document.write(str.search("luck")+"<br>");//인덱스 값
+document.write(str.substring(6,12)+"<br>");//6번부터 11번인덱스까지 서브스트링을 찾아라
+document.write(str.subst(21,4)+"<br>");//21번 인덱스부터 시작해서 4글자를 출력해라
+
+
+</script>
+
+
+</body>
+</html>

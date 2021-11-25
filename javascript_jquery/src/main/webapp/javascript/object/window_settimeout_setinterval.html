@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var i=0;
+var auto=setInterval("console.log(++i)",3000);//3초씩 텀을 두고 실행
+</script>
+<button onclick="clearInterval(auto)">정지버튼</button><!-- setinterval의 실행과정을 멈춰주는 게 clearinterval -->
+
+
+</body>
+</html>

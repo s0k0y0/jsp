@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+object: var(const,let) 변수명={} 이건 객체라는데....뭔 말인지ㅠㅜ<br>
+array: var 변수명=[] 이건 배열<br>
+//자바 스크립트에서 배열은 타입이 달라도 배열에 저장 가능하다. 자바의 일반 배열은 불가능<br>
+
+
+<p id="here"></p><!-- 이 순서가 반드시 위로 와야함 -->
+
+
+
+<script>
+//배열 값 입력 형식1
+var a1= new Array();
+a1=[10,20,30];
+document.write(a1[0]+"<br>");
+
+//배열 값 입력 형식2
+var a2= new Array();
+a1[0]=10;
+document.write(a1[0]+"<br>");
+
+//배열 값 입력 형식3
+var a1= new Array(10,"20",30);
+document.write(a1[0]+"<br>");
+
+//배열 값 입력 형식4
+var a2=[10,20,"30"]
+document.write(a1[0]+"<br>");
+
+
+
+let text = "<ul>";
+for (let i = 0; i <a1.length; i++) {
+  text += "<li>" + a1[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("here").innerHTML = text;
+</script>
+
+
+
+
+</body>
+</html>

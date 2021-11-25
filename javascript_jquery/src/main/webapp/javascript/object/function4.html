@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var num=0;//전역변수
+var a;
+function testFnc(){
+	a=500;//지역변수
+	num++;
+	document.write(num,"<br>");
+	if(num==10){
+		return;
+	}
+	testFnc();
+}
+
+document.write(num,"<br>");//메소드 실행 전이라 0
+document.write(a,"<br>");/*선언만 되고 값이 지정안됨*/
+testFnc();
+document.write(num,"<br>");//메소드 실행후라 마지막 수인 10
+
+</script>
+</body>
+</html>

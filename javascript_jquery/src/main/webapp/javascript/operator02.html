@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+[문제1]<br>
+적정 체중을 만드는 실행문 만들기<br>
+적정 체중:(본인 신장-100)*0.9<br>
+키: 180, 몸:74<br>
+적정체중구하기<br>
+<script>
+var userHeight=180;
+var userweight=74;
+var result=(userHeight-100)*0.9;
+document.write(result+"<hr>");
+
+</script>
+[문제2] <br>
+<script>
+var height=prompt("당신의 신장은?","0");
+var weight=prompt("당신의 몸무게는?"+"0");
+var result=(height-100)*0.9;
+var result2= weight>result? "과체중":"저체중";
+document.write(result2);
+
+
+
+</script>
+</body>
+</html>

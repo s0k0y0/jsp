@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수학객체</title>
+</head>
+
+
+<body>
+<script>
+
+
+var fir=Math.random()*3+1;
+var sec=Math.trunc(fir);
+
+var mefir=prompt("가위,바위,보 중 선택하세요?","");
+var mesec;
+
+
+	
+	if(mefir=="가위"){
+		mesec=1;
+	} else if(mefir=="바위"){
+		mesec=2;
+	} else if(mefir=="보"){
+		mesec=3;
+	} else{
+		alert("잘못 작성하셨습니다");
+		location.reload();
+	}
+	
+	
+	
+	switch (sec) {
+	case 1: 
+		document.write("<img src=../imagemath/math_img_1.jpg>");
+		break;
+
+	case 2:	
+		document.write("<img src=../imagemath/math_img_2.jpg>");	
+		break;
+		
+		
+	default:
+		document.write("<img src=../imagemath/math_img_3.jpg>");
+		break;
+	}
+	
+	
+	
+	if(sec==1&&mesec==1){
+		setTimeout(function(){ alert("맞췄습니다"); }, 3000);
+	} else if(sec==2&&mesec==2){
+		setTimeout(function(){ alert("맞췄습니다"); }, 3000);
+	} else if(sec==3&&mesec==3){
+		setTimeout(function(){ alert("맞췄습니다"); }, 3000);
+	} else{
+		setTimeout(function(){ alert("틀렸습니다"); }, 3000);
+	}
+
+	
+	/*선생님 코드
+	settimeout:자바 thread.sleep()과 동일, 정해진 시간이 지난후에 실행
+	location.reload();=현재 위치에서 새로고침
+
+	
+	
+	var com=Math.ceil(Math.random()*3);
+	document.write("<img src=""../imagemath/math_img_"+sec+".jpg" , alt=가위,바위,보>");	
+	
+	
+	
+	if(sec==mesec){
+		setTimeout(function(){ alert("맞췄습니다"); }, 3000);
+	} else {
+		alert("틀렸습니다")
+	}
+	
+	
+	
+	*/
+	
+
+</script>
+
+
+</body>
+</html>

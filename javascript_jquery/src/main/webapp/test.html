@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+header p{
+padding:10px;
+text-align: center;
+border-bottom: 1px solid gray; 
+border-top: 1px solid gray; 
+}
+
+.in{
+padding: 8px;
+border-bottom: 1px solid gray;
+}
+
+.in input{
+padding-left: 20px;
+}
+
+footer{
+padding: 20px;
+text-align: center;
+}
+
+
+</style>
+
+</head>
+
+<body>
+<from action="/#" method="post">
+
+<header>
+<p>MEMBER INFO</p>
+</header>
+
+
+<section>
+<article>
+<div class="in">*표시는 필수 입력 표시입니다</div>
+<div class="in">*ID<input type="text" id="i"></div>
+<div class="in">*이름<input type="text" id="nam"></div>
+<div class="in">*비밀번호<input type="text" id="pass1"></div>
+<div class="in">*비밀번호 확인<input type="text" id="pass2"></div>
+<div class="in">*생일<input type="number" id="birth" placeholder="2019">년<input type="number" id="birth" placeholder="12">월 <input type="number" id="birth">일</div>
+<div class="in">*E-mail<input type="text" id="email">@<input type="text" id="email" placeholder="gmail.com"><input type="button" id="but" value="중복확인"></div>
+<div class="in">*휴대폰<input type="number" id="phone">-<input type="number" id="phone"></div>
+<div class="in">*주소<input type="text" id="addr"></div>
+<div class="in">*상세주소<input type="text" id="daddr"></div>
+
+</article>
+</section>
+
+
+<footer>
+<input type="button" value="수정">
+<input type="button" value="목록">
+</footer>
+
+
+</from>
+
+
+</body>
+</html>
