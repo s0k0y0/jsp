@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>2019년 달력</title>
+
+
 </head>
 
 
@@ -14,75 +16,117 @@ function get_Time() {
 	var minute=d.getMinutes();
 	var ampm;
 	
-	if(hour>=12){
+	if(hour>12){
 		ampm="오후";
+		hour=hour-12;
 	} else{
-		ampm="오전"
+		ampm="오전";
 	}
 	
-	return document.write(ampm+hour+":"+minute);
+	if(hour==0){
+		hour=0;
+	} else{
+		hour=12;
+	}
+	//hour=(hour==0)? 12:hour;//hour가 0이냐? 12시라면 12를 넣고 0이라면 hour값에 그대로 넣어라
+	
+	
+			
+	return ampm+hour+":"+minute;
 }//불러오는 모든 메소드에는 반드시 메소드명()을 붙여줘야 한다
 //this는 메소드에 파라미터인 변수를 가리킬때, 메소드의 지역변수는 this.를 써줄 필요가 없음
 
-get_Time();
-
 
 function get_Day(year,month) {
-	var last_Mon=new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-	var Mon2;
+	var LastDay=new Array(31,29,31,30,31,30,31,31,30,31,30,31);
 	
+	var february;
 	
+	if(year%4==0){
+		february=true;
+	} else{
+		february=false;
+		LastDay[1]=(february)? 29:28; //변수가 뭐냐? 변수가 틀렸으면 나눴을때 나머지가 0이 아니라면 28로 넣어라
+	}
 	
-	
-	
-	
-	
-	
+	return LastDay[month];
 }
 
-function drawCal(firstDay,lastDate,date,year,monthName){
-	var t="<table border=1>";
-	var day=1;
+
+
+var digit=1;//일 수 1일,2일,3일....30일
+var currentCell=1;
+
+
+function drawCal(first,last,date,year,monthN) {
 	
-	for(var i=1; i<=5; i++){
-		t=t+"<tr>";
-		for(var k=1; k<=7; i++){
-			t=t+"<td>";
-			for(var j=1; j<t.length; j++){
-				t=t+day;
-				day++
+	var t="<center><table ><th colspan=7><font color=midnightblue size=+3>"+year+"년"+(monthN+1)+"월"+date+"일</font></th>";
+	
+	t=t+"<tr><td whidth=45 height=40><font color=darkblue>";
+	
+	var weekDay=new Array("일","월","화","수","목","금","토");
+	
+	for(var i=0; i<=6; i++){
+		t=t+weekDay[i]+"</font></td>";
+		}
+	t=t+"</tr>";
+	
+	for(var j=1; j<= Math.ceil((last+first-1)/7); ++j){//7로 나누는 이유는 
+		t=t+"<tr align=right valign=top>"
+		for(var k=1; k<= 7; k++){
+			
+			if(digit>last){//digit가 달의 마지막 수행 후 31이 됨. 그 전까진 1부터 하나씩 올라가기에 break걸리지 않고 밑에 문장이 실행됨
+				break;
 			}
-			t=t+"</td>";
+			
+			
+			
+			if(currentCell<first){//first는 밑에서 1월달이 어느 요일에 있는지 파악하고 값이 들어와서 조건이 맞지 않으면 빈칸을 실행하도록 한다
+				t=t+"<td>&nbsp</td>";
+				currentCell++;
+			} else{
+				if(digit==date){
+					t=t+"<td height=40><font color=red>"+digit+"</font></br><font color=purple size=2><center>"+get_Time()+"</center></font></td>"
+					
+					
+					
+				} else{
+					t=t+"<td height=40>"+digit+"</td>";
+					
+				}
+				digit++;
+			}
+			
 		}
 		t=t+"</tr>";
 	}
-	
 	t=t+"</table>";
+	t=t+"</center>";
 	
 	
+	return t;
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </script>
 
+<script>
+//변수 생성 및 객체 생성
 
+var now=new Date();
+var year=now.getYear()+1900; //121이 출력됨; 1900+121=2021
+var month=now.getMonth();
+var date=now.getDate();
 
+var firstDayInstance=new Date(year,month,1);
+var first=firstDayInstance.getDay()+1; //일요일은 0,월요일은 1,화요일은 2, 수요일은 3 등에서 +1함
+var days=get_Day(year,month) ; //달의 마지막 일
 
+var my_t=drawCal(first,days,date,year,month); //2,30,26,2021,10의 값이 출력됨
+document.write(my_t);
 
-
+</script>
 
 
 
