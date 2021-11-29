@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트에 접근해서 스타일 지정하기</title>
+<style>
+.spotlight{
+background-color: yellow; 
+}
+.redtext{
+color: red;
+}
+.largettext{
+font-size:30pt;
+}
+.italictext{
+font-style: italic;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script type="text/javascript"></script>
+<script>
+
+$(document).ready(function() {
+	$("#simple1, #simple2").addClass('redtext');
+	$(".simple1, #simple3").addClass('spotlight');
+	$("#simple1").addClass('largettext');
+	$(".simple1").addClass('italictext');
+	
+})
+
+
+
+/*
+$(document).ready(function() {
+	$("button").click(function() {
+		$("#simple1").css({'color':'red','font-size':'250%'});
+		$(".simple1").css({'background-color':'yellow','font-style':'italic'});
+		$("span").css("color","red");
+		$("div").css("background-color","yellow");
+	})
+	
+});
+*/
+
+</script>
+</head>
+<body>
+<span id="simple1">simple</span>
+<div class="simple1">jQuery</div>
+<span id=simple2>basic</span>
+<div id="simple3">example</div>
+
+<button>click!</button>
+
+
+</body>
+</html>

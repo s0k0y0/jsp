@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정의 필터 셀렉터를 이용하여 폼 요소 다루기</title>
+<style>
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+body{
+border: 1px solid blue;
+padding: 10px;
+margin: 10px;
+width: 500px;
+}
+.item{
+	display: inline-block;
+	width: 90px;
+	margin-bottom: 10px;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script src="../js/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript">
+</script>
+<script>
+
+
+$(function () {
+	$('#regBtn').click(function () {
+		invalidItem();
+	})
+})
+
+function invalidItem() {
+	let i= $("#userId").val();
+	let n=$("#userName").val();
+	let p=$("#pass").val();
+	let c=$("#pwdConfirm").val();
+	
+	if (i!=="") {
+		if(n!==""){
+			if(p!==""&&c!==""){
+				if(p==c){
+					alert(n+"님 회원 가입을 축하합니다");
+					clearinput();
+				}else{
+					alert("비밀번호가 다릅니다")
+				}
+			}else {
+				aler("password error");
+				$("#pass").focus();
+			}
+		
+		}else {
+			aler("Name error");
+			$("#userName").focus();
+		}
+		
+	}  else {
+		console.log(i);
+		aler("ID error");
+		$("#userId").focus();
+	}
+};
+		
+
+
+function clearinput() {
+		$("input[type=text],[type=password]").val("");
+}
+
+</script>
+</head>
+
+
+<body>
+<form action="result.jsp" method="get">
+<div><span class="item">ID</span><input name ="userId" id="userId" type="text"></div>
+<div><span class="item">Name</span><input name="userName" id="userName" type="text"></div>
+<div><span class="item">PassWord</span><input name="pass" id="pass" type="password"></div>
+<div><span class="item">Pwd check</span><input name="pwdConfirm" id="pwdConfirm" type="password"></div>
+<input type="submit" id="regBtn" value="회원가입">
+</form>
+</body>
+</html>

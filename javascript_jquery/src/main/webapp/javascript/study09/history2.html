@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>history2</title>
+</head>
+<body>
+<h1>두번째 페이지</h1>
+<div><a href="http://localhost/javascript/study09/history3.html">3페이지 이동</a></div>
+<button id="fp">이전 페이지</button>
+
+<script>
+
+var page=document.getElementById('fp');
+
+page.addEventListener("click",firstpage);
+
+function firstpage() {
+	window.history.back();
+}
+
+</script>
+
+
+
+</body>
+</html>

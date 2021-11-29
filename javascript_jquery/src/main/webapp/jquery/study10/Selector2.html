@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>n번째 엘리먼트</title>
+<style>
+*{
+padding-right: 20px;
+}
+.back{
+background-color: pink;
+color: blue;
+font-weight: bold;
+}
+
+table{
+table-layout: auto;
+width: 30%;
+}
+
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script type="text/javascript">
+</script>
+<script>
+$(document).ready(function() {
+	$("td:gt(1)").addClass('back');
+	$("td:gt(4)").removeClass('back');
+
+})
+
+
+
+</script>
+</head>
+<body>
+<table>
+<tr><td>zero</td><td>one</td><td>two</td></tr>
+<tr><td>three</td><td>four</td><td>five</td></tr>
+</table>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>history3</title>
+</head>
+<body>
+<h1>세번째 페이지</h1>
+<button id="fp">1단계 이전 페이지</button>
+<button id="sp">2단계 이전 페이지</button>
+
+<script>
+
+var page1=document.getElementById('fp');
+var page2=document.getElementById('sp');
+
+page1.addEventListener("click",dback);
+page2.addEventListener("click",back);
+
+function back() {
+	window.history.back();
+}
+
+function dback() {
+	window.history.go(-2);
+}
+
+</script>
+
+</body>
+</html>
