@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<button id="bt1">mouseOver/mouseOut</button><br>
+<button id="bt2">hover</button>
+
+
+<script>
+$(function() {
+	
+	$('#bt1').mouseover(function() {
+		$('body').css("background-color","yellow");
+	})
+			
+	$("#bt1").mouseout(function(e) {
+		$('body').css("background-color","purple");
+	})
+	
+	$("#bt2").hover(function() {
+		$('  body').css("background-color","yellow");
+	},function() {
+		$('  body').css("background-color","aqua");
+	});
+})
+
+		
+
+
+</script>
+</body>
+</html>

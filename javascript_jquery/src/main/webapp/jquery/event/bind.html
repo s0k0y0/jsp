@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+bind():선택한 요소에 한개 이상의 이벤트를 등록.동적으로 생성된 새로운 요소에서는 적용되지 않는다<br>
+<h1><a href="#">button</a></h1>
+
+
+<script>
+$(function() {
+	$("h1 a").bind("mouseover focus",function(){
+		$(this).css("background-color","yellow");
+	})
+})
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

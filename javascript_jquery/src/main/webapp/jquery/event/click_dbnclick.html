@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<button id="bt1">click(background:yellow)</button><br>
+<button id="dbnbt2">click(background:purple)</button>
+
+<script>
+$(function() {
+	
+	$('#bt1').click(function() {
+		$('body').css("background-color","yellow");
+		
+	})
+			
+	$("#dbnbt2").dblclick(function() {
+		$('body').css("background-color","purple");
+	})
+	
+	//$("#dbnbt2").dblclick()강제로 더블클릭 발생해서 보라색으로 변한다
+})
+
+		
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#btnRead').click(function() {
+		$("#container").load("before_jquery.html");//문서안의 내용만 가져오기. 태그는 가져오지 않음
+	});
+	
+	$("#btnsub").click(function(){//html파일의 모든 태그와 데이터 가져오기
+		$.ajax({
+			url:"subjectList.jsp",//해당 서버에 요청하여
+			datatype:"html", //이 문서를 나한테 보내라
+			success:function(data){ //무사히 문서를 보냈으면 해당 함수 실행
+				$("#container").html(data)  //html 태그와 안에든 데이터를 가져와 출력하겠다
+			}
+		});
+			
+	});
+	
+	$("#btnCheckLogin").click(function() {
+		$.ajax({
+			url:"checkLogin.jsp?no=3",//해당 경로로 3이 들어있는 변수를 보낸다
+			datatype:"html",
+			success:function(data){//성공했을 때 실행되는 함수니까 callback함수
+				$("#container").html(data)
+			}
+		});
+	});
+})
+
+</script>
+</head>
+<body>
+Ajax:자바 스크립트의 제이쿼리를 통해서 서버에 데이터를 요청하는 것, HTML form을 대신한 것. 부분 로딩만 하므로 속도가 빠르다<br>
+(예)네이버 같은 검색창에 "자동완성" 기능: 우리의 기록 검색만 서버에서 부분 추출해가지고 가져온 것<br>
+(예)페이스북이나 트위터에서 글을 입력해도 전체가 다시 로드되는 것이 아니라 ,해당 내용만 일부 로딩되는 형태<br>
+Ajax Callback 함수:서버로부터 responds가 도착했을 때 실행되는 함수<br>
+
+
+
+
+
+<button id="btnRead">서버에서 데이터 가져오기</button><br>
+<button id="btnsub">교과목 체크 리스트</button><br>
+<button id="btnCheckLogin">교과목 체크 리스트</button><br>
+
+<div id="container">이 곳에 내용 가져오기</div>
+
+</body>
+</html>

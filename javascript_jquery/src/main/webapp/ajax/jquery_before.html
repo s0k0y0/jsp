@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#btnRead').click(function() {
+		$("#container").load("before_jquery.html");
+	});
+})
+
+
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<button id="btnRead">서버에서 데이터 가져오기</button>
+<div id="container">이 곳에 내용 가져오기</div>
+
+</body>
+</html>
