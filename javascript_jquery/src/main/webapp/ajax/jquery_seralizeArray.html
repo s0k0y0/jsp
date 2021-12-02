@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var x = $("form").serializeArray();//직렬적인 연속적인 배열을 변수에 넣음
+    $.each(x, function(i, field){//배열에 든 2개를 반복해서 실행하겠다 i라는 인덱스 변수(배열1=인덱스0), 거기에 들어있는 필드는 변수 속성
+      $("#results").append(field.name + "=" + field.value + "<br>");
+    });
+  });
+});
+</script>
+</head>
+<body>
+form에 입력한 데이터를 json형식의 문자열로 변환한것<br>
+<form action="">
+  First name: <input type="text" name="FirstName" value="Mickey"><br>//배열1
+  Last name: <input type="text" name="LastName" value="Mouse"><br>//배열2번쨰
+</form>
+
+<button>Serialize form values</button>
+
+<div id="results"></div>
+
+</body>
+</html>

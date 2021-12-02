@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+
+<style>
+td{
+border: 1px solid gray;
+}
+</style>
+</head>
+
+
+<body>
+
+
+<script>
+$(function() {
+	$.get("source/item.json",function(data){
+			$('#treeData').append("<tr><td>id</td><td>name</td><td>price</td><td>description</td></tr>");
+			$(data).find("item").each(function() {
+				var $item=$(this);//this를 변수에 넣어 변숫 생성. 근데 왜 만들어야 하지?ㅠㅜ
+				$('#treeData').append("<tr><td>" +$item.attr("id")+ "</td><td>"+$item.attr("name")+"</td><td>"+$item.attr("price")+"</td><td>"+$item.attr("description")+"</td></tr>");
+			});
+	});
+});
+</script>
+
+
+
+<table id="treeData">
+
+</table>
+
+</body>
+</html>
