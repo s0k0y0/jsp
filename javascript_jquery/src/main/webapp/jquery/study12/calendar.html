@@ -19,7 +19,7 @@
 <div id="calendar_wrap">
 <table border=1>
 <th colspan="7"></th>
-<tr>
+<tr id="one">
 <td>일</td>
 <td>월</td>
 <td>화</td>
@@ -34,12 +34,12 @@
 <script>
 var d=new Date();
 var year=d.getFullYear(); //현재 연도
-var month=d.getMonth()+1; //현재 달
+var month=d.getMonth(); //현재 달
 var firstdate=new Date(year,month,1).getDate(); //첫째 날 출력
-var firstday=new Date(year,month,1).getDate(); //첫째 날 요일
+var firstday=new Date(year,month,1).getDay(); //첫째 날 요일
 var lastdate=new Date(year,month+1,0).getDate(); //마지막 날 출력
 
-var i;
+
 
 
 
@@ -47,13 +47,22 @@ $(function() {
 
 	$('th').text(year+"년"+month+"월");
 	
-	for(i=0; i<firstday; i++){
-		$("tr").append("<td></td>");
+	for(var i=0; i<firstday; i++){//월을 함부로 +1하면 안됨. 그럼 첫째날 요일이 틀려지게 됨
+		$("table").append("<td></td>");
 	}
 	
-	for(i=0; i<=lastdate; i++){
-		$('tr').append("<td>"+i+"</td>");
-		if()
+	for(var i=1; i<=lastdate; i++){
+		
+		if(firstday==1){
+			$("table").append("<tr>");
+		}
+		if(firstday==7){
+			$('table').append("</tr>");
+		}
+		
+		$('table').append(function() {
+			$(this).text("<td>"+i+"</td>");
+		});
 	}
 	
 	

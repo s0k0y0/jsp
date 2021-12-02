@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>JSP::AJAX::DB</title>
+
+<script>
+$(function() {
+	$("#id01").on("click",function(){
+		alert("데이터 요청");
+		$.ajax({
+			url:'dbfrom.jsp?',
+		type:'get',
+		success:function(t){//가져온 데이터 놈들은 t다
+			$(t).fine("person").each(function() {
+				var name=$(this).find('name').text(); //현재 파일, 즉 dbfrom에서 name라는 것을 찾아서 출력하여 변수 name에 집어넣겠다
+				var age=$(this).find('age').text();
+				var salary=$(this).find('money').text();
+				
+				$("<h1></h1>").text(name+":"+age+":"+salary).appendTo('body');
+			});
+			
+		},
+		error:function(){
+			alert("실패");
+		}
+		});//자바스트립트나 제이쿼리가 서버에서 데이터를 가져오거나 보낼 수 있는 문법
+	});
+	
+	$("#id02").on("click",function(){
+		alert("데이터 전송");
+		$.ajax({
+			url:"dbto.jsp?",
+			type:"post",
+			data:{
+			name:$("#name1").val(),
+			age: $("#age1").val(),
+			salary:$("#salary1").val()
+			},
+			success:function(){
+				alert("성공");
+			},
+			error:function(){
+				alert("실패");
+			}
+			
+		});
+	});
+});
+
+
+</script>
+</head>
+<body>
+<button id="id01">데이터 요청(Select_dbfrom)</button>오라클에서 데이터를 가지고 오는 역할<br>
+이름:<input type="text" id="name1" ><br>
+나이:<input type="text" id="age1" ><br>
+금액:<input type="text" id="salary1" ><br>
+<button id="id02">DB전송(insert_dbto)</button>오라클로 데이터를 보내는 역할<br>
+
+</body>
+</html>
