@@ -15,22 +15,25 @@
 <%
 try{
 	String driver="oracle.jdbc.driver.OracleDriver";
-	String url="jdbc:oracle:thin:@localhost:1521:oracle";
+	String url="jdbc:oracle:thin:@localhost:1521:orcl";
 	Class.forName(driver);
 	Connection con=DriverManager.getConnection(url, "jsp", "jsp");
 	Statement stmt=con.createStatement();
-	String sql="select * from join";
+	String sql="select*from join";
 	ResultSet rs= stmt.executeQuery(sql);
 	while(rs.next()){
-		String name=rs.getString(0);
-		String age=rs.getString(1);
-		String salary=rs.getString(2);
+		String name=rs.getString(1);
+		String age=rs.getString(2);
+		String salary=rs.getString(3);
 		
 		String strXML=" ";
-		strXML=strXML+"<join><person><name>"+name+"</name>";
-		strXML=strXML+"<age>"+age+"</age>";
-		strXML=strXML+"<salary>"+salary+"</salary>";
-		strXML=strXML+"</person></join>";
+		strXML += "<join>";
+		strXML += "<person>";
+		  strXML += "<name>"+name+"</name";
+		  strXML += "<age>"+age+"</age";
+		  strXML += "<salary>"+salary+"</salary>";
+		strXML += "</person>";
+		strXML += "</join>";
 		out.write(strXML);
 	}
 }catch(Exception e){

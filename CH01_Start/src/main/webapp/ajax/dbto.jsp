@@ -21,7 +21,7 @@ String salary=request.getParameter("salary");
 
 try{
 	String driver="oracle.jdbc.driver.OracleDriver";
-	String url="jdbc:oracle:thin:@localhost:1521:oracle";
+	String url="jdbc:oracle:thin:@localhost:1521:orcl";
 	Class.forName(driver);
 	Connection con=DriverManager.getConnection(url, "jsp", "jsp");
 	Statement stmt=con.createStatement();

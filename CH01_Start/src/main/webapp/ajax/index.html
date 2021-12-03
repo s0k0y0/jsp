@@ -10,15 +10,15 @@ $(function() {
 	$("#id01").on("click",function(){
 		alert("데이터 요청");
 		$.ajax({
-			url:'dbfrom.jsp?',
+		url:'dbfrom.jsp',
 		type:'get',
 		success:function(t){//가져온 데이터 놈들은 t다
 			$(t).fine("person").each(function() {
 				var name=$(this).find('name').text(); //현재 파일, 즉 dbfrom에서 name라는 것을 찾아서 출력하여 변수 name에 집어넣겠다
 				var age=$(this).find('age').text();
-				var salary=$(this).find('money').text();
+				var salary=$(this).find('salary').text();
 				
-				$("<h1></h1>").text(name+":"+age+":"+salary).appendTo('body');
+				$("<h1></h1>").text(name+" "+age+" "+salary).appendTo('body');
 			});
 			
 		},
@@ -31,7 +31,7 @@ $(function() {
 	$("#id02").on("click",function(){
 		alert("데이터 전송");
 		$.ajax({
-			url:"dbto.jsp?",
+			url:"dbto.jsp",
 			type:"post",
 			data:{
 			name:$("#name1").val(),

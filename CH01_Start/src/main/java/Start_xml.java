@@ -8,16 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/CH02_start/Start")
-public class Start extends HttpServlet {
+//servlet Mapping 방법:annotation , web.xml
+//1.annotation 방식:권장사항. 골뱅이 부분
+//@WebServlet("/CH02_start/Start_Xml")
+public class Start_xml extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	//자바에서 웹으로 정보를 전달하기 위한 방법???
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");
 		
-		String name=request.getParameter("name");//파라미터의 다형성으로 request변수에 담아있는 httpseervlet 클래스의 메소드 사용가능. 서블렛이라고 함????
+		String name=request.getParameter("name");
 		
 		
 		PrintWriter out=response.getWriter();

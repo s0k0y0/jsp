@@ -1,20 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-String name=request.getParameter("name");
-%>
-
+    
+    
+    <%!
+    
+    public int multiply(int a, int b){
+    	int c=a+b;
+    	return 0;
+    }
+    
+    
+    %> <!-- 선언부 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script>
-
-
-</script>
 </head>
 <body>
-<%=name %>
+10*25=<%=multiply(10,25) %>
 </body>
 </html>
