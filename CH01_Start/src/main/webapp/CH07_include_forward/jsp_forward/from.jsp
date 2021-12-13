@@ -23,6 +23,8 @@ request.setAttribute("number", "1234");
 include는 다시 메인 페이지로 돌아왔다면 forward는 다른 페이지에서 실행을 종료함
 </div>
 
+jsp에서 사용하는 forward
+
 
 </body>
 </html>
