@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+	$.ajax({
+		type: "get",
+		url: "test01.html",
+		dataType:"text",
+		success: function() {
+				$("#menu1").on("click",function(){
+					$('#m1').append("<br>중식메뉴<ul><li>짜장면</li>"+
+							"<li>짬뽕</li>"+
+							"<li>기스면</li>"+
+							"<li>탕수육</li></ul> 메뉴를 골라주세요")
+				})
+			
+		}
+	});
+	
+	$.ajax({
+		type: "get",
+		url: "test01.html",
+		dataType:"text",
+		success: function() {
+				$("#menu2").on("click",function(){
+					$('#m2').append("<ul><li>짜장면</li>"+
+							"<li>짬뽕</li>"+
+							"<li>기스면</li>"+
+							"<li>탕수육</li></ul>")
+				})
+			
+		}
+	});
+	
+	
+	
+</script>
+</head>
+<body>
+	<section>
+		<nav id="menu1"><a href="#">메뉴 보기1</a><dev id="m1"></dev></nav>
+		<nav id="menu2"><a href="#" >메뉴 보기2</a><dev id="m2"></dev></nav>
+
+
+
+	</section>
+</body>
+</html>
