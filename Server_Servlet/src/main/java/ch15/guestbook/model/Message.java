@@ -1,5 +1,5 @@
 package ch15.guestbook.model;
-//448
+//448, DTO=vo=Bean=Getter()/Setter()
 public class Message {
 
 	private int id;
@@ -34,8 +34,13 @@ public class Message {
 	}
 	
 	
+	public boolean hasPassword() {
+		return password !=null&& !password.isEmpty();
+	}
 	
-	
+	public boolean matchPassword(String pwd) {
+		return password !=null&& !password.equals(pwd);
+	}
 	
 	
 	
