@@ -1,27 +1,42 @@
-package CH18.mvc.dao;
+package command_pattern;
 
 import java.sql.Connection;
+
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import CH18.mvc.vo.EmpDTO;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
-public class EmpDAO{
+
+
+public class EmpDAO {
 	
-	String driver="oracle.jbdc.driver.OracleDriver";
-	String url="jdbc:oracle:thin:@locahost:1521:orcl";
-	String userid="scott";
-	String passwd="scott";
+	
+//	String driver="oracle.jbdc.driver.OracleDriver";
+//	String url="jdbc:oracle:thin:@locahost:1521:orcl";
+//	String userid="scott";
+//	String passwd="scott";
+	//tomcat context에 이미 oracle 연걸 resource가 첨부되어 있어 따로 드라이브 연결이 필요가 없음
+	
+	DataSource dataFactory;
 	
 	public EmpDAO(){
-		try {
-			Class.forName(driver);
-		} catch(ClassNotFoundException e){
-			
-		}
+	
+			try {
+				Context cx=new InitialContext();
+				dataFactory=(DataSource)cx.lookup("java:comp/env/jdbc/OracleDB");
+				
+			} catch (NamingException e) {
+				
+			}
+		
 	}
 	
 
@@ -34,7 +49,9 @@ public class EmpDAO{
 		
 		try {
 			String sql="select empno,ename,sal,deptno from emp";
-			con=DriverManager.getConnection(url, userid, passwd);
+			con=dataFactory.getConnection();
+			
+			System.out.println("A");
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
@@ -53,16 +70,12 @@ public class EmpDAO{
 				pstmt.close();
 				con.close();
 			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				
 			}
 		}
 		
 		
 		return list;
-		
-		
-		
 	}
 	
 	

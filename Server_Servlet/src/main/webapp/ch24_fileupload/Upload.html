@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+일반적인 전송방식:: form action="#" method="get" enctype="application/x-www-form-urlencoded"
+파일 전송방식:: enctype="multipart/form-data" //반드시 post 타입으로 설정 해야함
+
+<form action="Upload" method="post" enctype="multipart/form-data">
+작성자:<input type="text" name="theAuthor"><br>
+파일:<input type="file" name="theFile"><br>
+<input type="submit" name="업로드"><br> 
+</form>
+</body>
+</html>

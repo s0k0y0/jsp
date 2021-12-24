@@ -1,4 +1,4 @@
-package CH18.mvc.vo;
+package command_pattern;
 
 public class EmpDTO {
 
